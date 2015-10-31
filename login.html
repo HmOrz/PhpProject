@@ -1,0 +1,54 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<script language='javascript' src='check_data.js'></script>
+<script language="javascript">
+function Check()
+{
+    if(document.Login.username.value == "")
+	{
+		window.alert('请输入你的用户名！');
+		return false;
+	}
+	if(document.Login.username.value.length < 2)
+	{
+		window.alert('用户名长度必须大于2！');
+		return false;
+	}
+	if(document.Login.pwd.value == "")
+	{
+		window.alert('请输入你的密码！');
+		return false;
+	}
+	if(document.Login.pwd.value.length < 6)
+	{
+		window.alert('密码长度不足！');
+		return false;
+	}
+}
+</script>
+<body>
+	<form name="Login" method="post" action="login.php" onSubmit="return Check();">
+	<table border="0" cellpadding="8" width="350" align="center">
+		<tr>
+			<td colspan="2" align="center" class="alert">用户登录界面</td>
+		</tr>
+		<tr>
+			<td>用户名：</td>
+			<td><input name="username" type="text" id="username" class="textinput" /></td>
+		</tr>
+		<tr>
+			<td>密码：</td>
+			<td><input name="pwd" type="password" id="pwd" class="textinput" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" class="btn" value="登录">
+			&nbsp;&nbsp;
+			<input type="reset" class="btn" value="重置"></td>
+		</tr>
+	</table>
+	</form>
+
+</body>
+</html>
