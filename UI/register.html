@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户注册</title>
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="templatemo_container">
+  	<div id="templatemo_header">
+  	  <div id="site_title">
+    	</div>
+    </div> <!-- end of header -->
+        
+  <div id="templatemo_register">  	
+  </div> <!-- end of banner -->
+  
+  <form name="send" method="post" action="register.php"
+	  onSubmit="return Check()">
+	<table width="330" border="0" align="center" cellpadding="5">
+    <tr>
+		<td width="40%" align="right">学号：</td>
+		<td><input name="id" type="text" id="id">
+		<font color="#FF6699">*</font>
+		</td>
+	</tr>
+	<tr>
+		<td align="right">姓名：</td>
+		<td><input name="name" type="text" id="name">
+		<font color="#FF6699">*</font>
+		</td>
+	</tr>
+	<tr>
+		<td align="right">密码：</td>
+		<td><input name="password" type="password" id="password">
+		<font color="#FF6699">*</font>
+		</td>
+	</tr>
+	<tr>
+		<td align="right">重复密码：</td>
+		<td><input name="cpassword" type="password" id="cpassword">
+		<font color="#FF6699">*</font>
+		</td>
+	</tr>
+    <tr>
+		<td align="right">性别：</td>
+        <td>
+        <select name="sex">
+          <option value="男" selected="selected">男</option>
+          <option value="女">女</option>
+        </select>
+        <font color="#FF6699">*</font>
+        </td>
+	</tr>
+    <tr>
+		<td align="right">民族：</td>
+		<td><input name="nation" type="text" id="nation">
+		<font color="#FF6699">*</font>
+		</td>
+	<tr>
+    <tr>
+		<td align="right">出生日期：</td>
+		<td><input name="born" type="text" id="born">
+		<font color="#FF6699">*</font>
+		</td>
+	<tr>
+    <tr>
+		<td align="right">入学日期：</td>
+		<td><input name="in_date" type="text" id="in_date">
+		<font color="#FF6699">*</font>
+		</td>
+	<tr>
+		<td align="right">政治面貌：</td>
+        <td>
+        <select name="party">
+          <option value="群众" selected="selected">群众</option>
+          <option value="共青团员">共青团员</option>
+          <option value="中共党员">中共党员</option>
+        </select>
+        </td>
+	</tr>
+    <tr>
+		<td align="right">专业班级：</td>
+		<td><input name="major" type="text" id="major">
+		<font color="#FF6699">*</font>
+		</td>
+	<tr>
+    <tr>
+		<td align="right">联系号码：</td>
+		<td><input name="phonenum" type="text" id="phonenum">
+		<font color="#FF6699">*</font>
+		</td>
+	<tr>
+    <tr>
+		<td align="right">Email：</td>
+		<td><input name="email" type="text" id="email">
+		</td>
+	</tr>
+    <tr>
+		<td align="right">联系地址：</td>
+		<td><input name="address" type="text" id="address">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"> 
+			<input type="submit" name="Submit" value="提  交">
+            &nbsp;&nbsp;
+			<input type="reset" name="reset" value="重  置">
+            &nbsp;&nbsp;
+            <a href="login.html"><input type="button" name="back" value="返回首页"></a>
+		</td>
+	</tr>
+	</table>
+  </form>
+  <script language="javascript">
+    function Check()
+    {
+        if(document.send.id.value == "")
+        {
+            window.alert('请输入学号！');
+            return false;
+        }
+        if(document.send.id.value.length < 2)
+        {
+            window.alert('学号长度必须大于9！');
+            return false;
+        }
+		if(document.send.name.value == "")
+        {
+            window.alert('请输入姓名！');
+            return false;
+        }
+        if(document.send.name.value.length < 2)
+        {
+            window.alert('用户名长度必须大于2！');
+            return false;
+        }
+        if(document.send.password.value == "")
+        {
+            window.alert('请输入密码！');
+            return false;
+        }
+        if(document.send.password.value.length < 6)
+        {
+            window.alert('密码的长度必须大于6！');
+            return false;
+        }
+        if(document.send.password.value != document.send.cpassword.value)
+        {
+            window.alert('确认密码与密码不一致！');
+            return false;
+        }
+		if(document.send.nation.value == "")
+        {
+            window.alert('请输入民族！');
+            return false;
+        }
+		if(document.send.born.value == "")
+        {
+            window.alert('请输入出生日期！');
+            return false;
+        }
+		if(document.send.in_date.value == "")
+        {
+            window.alert('请输入入学时间！');
+            return false;
+        }
+		if(document.send.major.value == "")
+        {
+            window.alert('请输入专业班级！');
+            return false;
+        }
+		if(document.send.phonenum.value == "")
+        {
+            window.alert('请输入联系号码！');
+            return false;
+        }
+        return true;
+    }
+    </script>
+	
+  <div id="templatemo_footer">此网页仅用于课程设计！ | Designed by <strong>Hm Team</strong></div> <!-- end of footer -->
+</div><!-- end of container -->
+</body>
+</html>

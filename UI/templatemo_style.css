@@ -143,6 +143,14 @@ h1 {
 	background: #b7bd19 url(images/templatemo_login_win.jpg) top left no-repeat;
 }
 
+#templatemo_register {
+	clear: both;
+	width: 960px;
+	height: 80px;
+	background: #b7bd19 url(images/templatemo_reg_bg.jpg) top left no-repeat;
+}
+
+
 /* banner */
 #templatemo_banner {
 	clear: both;
