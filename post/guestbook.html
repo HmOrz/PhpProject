@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>留言浏览模版</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="content">
+  <div id="main">
+    <ul>
+      <li id="main_top"></li>
+      <li id="main_middle" style="padding:0px 0px 15px 0px;" >
+        <div class="title_cr">留言板</div>
+          <table width="872" border="0" align="center" cellpadding="0"
+           cellspacing="0" class="tab_bbs">
+          <tr>
+            <td colspan="2" class="title_bbs">
+            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="50" class="title_b">&nbsp;</td>
+                  <td width="400" class="title_b">
+                    <a href="reply.php?id=<? echo $rs->id ?>">回复</a>  <a href="delete.php?id=<? echo $rs->id ?>">删除</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;建议
+                  </td>
+                  <td width="100" class="title_b">
+                    [留言人姓名]
+                  </td>
+                  <td class="title_b">
+                    [留言提交时间]
+                  </td>
+                 </tr>
+                </table></td>
+          </tr>
+          <tr>
+            <td width="45">&nbsp;</td>
+            <td width="823" class="td_bbs">
+              [留言内容展示区]
+            </td>
+          </tr>
+          <tr>
+            <td width="45" class="td_bbswhite">&nbsp;</td>
+              <td class="tb_bbsgray">
+              回复标题：你好 回复人：管理员 回复时间:[2015/01/26]
+            </td>
+          </tr>
+          <tr>
+            <td width="45" class="td_bbs">&nbsp;</td>
+            <td>
+              [管理员回复留言区]
+            </td>
+          </tr>
+          </table>
+          <div style="clear:both;"></div>
+          <div id="dashline"></div>
+          <div id="page" style="margin-right:30px; margin-top:8px;">
+            <span class="grayborder" style="background-color:#F6F6F6;">
+              <a href="4">下一页</a>
+            </span>
+            
+            <span class="grayborder" style="background-color:#F6F6F6;">
+              <a href="5">上一页</a>
+            </span>
+          </div>
+        </li>
+        <li id="main_bt"></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
