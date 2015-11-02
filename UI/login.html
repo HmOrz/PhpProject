@@ -32,6 +32,7 @@ function Check()
 }
 </script>
 <body>
+<form name="Login" method="post" action="login.php" onSubmit="return Check();">
 <div id="templatemo_container">
   	<div id="templatemo_header">
     	<div id="site_title">
@@ -39,12 +40,34 @@ function Check()
     </div> <!-- end of header -->
 
     <div id="templatemo_login">
-    	
-    </div> <!-- end of banner -->
-    
- 
+    	  <br /><br /><br /><br /><br /><br /><br />
+    	  <table border="0" cellpadding="8" width="552" align="center">
+ 		  <tr>
+ 		    <th width="116" height="42">&nbsp;</th>
+			<th width="80" align="right"> 用户名：</th>
+			<td width="300"><input name="username" type="text" id="username" class="textinput" /></td>
+		  </tr>
+		  <tr>
+		    <th height="41">&nbsp;</th>
+			<th align="right">密码：</th>
+			<td><input name="pwd" type="password" id="pwd" class="textinput" /></td>
+		  </tr>
+		  <tr>
+			<td height="60" colspan="3" align="center">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" class="btn" value="登录">
+            &nbsp;&nbsp;
+            <a href="register.html"><input type="button" class="btn" value="注册" onclick=""></a>
+			&nbsp;&nbsp;
+   		    <input type="reset" class="btn" value="重置"></td>
+		  </tr>
+		</table>
+
+    </div> 
+    <!-- end of banner -->
     
     <div id="templatemo_footer">此网页仅用于课程设计！ | Designed by <strong>Hm Team</strong></div> <!-- end of footer -->
 </div><!-- end of container -->
+</form>
 </body>
 </html>
