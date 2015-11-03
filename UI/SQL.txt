@@ -1,0 +1,17 @@
+create table `user`
+(
+    `id` int(11) not null auto_increment comment '自增编号',
+    `no` varchar(11) not null comment '学号',
+    `name` varchar(5) not null comment '姓名',
+    `pwd` varchar(15) not null comment '密码',
+    `sex` varchar(2) not null comment '性别',
+    `nation` varchar(10) not null comment '民族',
+    `born` varchar(15) not null comment '出生日期',
+    `indate` varchar(15) not null comment '入学时间',
+    `party` varchar(5) not null comment '政党',
+    `phone` varchar(15) not null comment '电话号码',
+    `major` varchar(10) not null comment '专业',
+    `adress` varchar(25) not null comment '地址',
+    `email` varchar(20) comment '邮箱',
+   primary key (`id`)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 auto_increment=5;

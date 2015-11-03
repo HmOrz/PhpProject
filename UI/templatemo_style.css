@@ -12,13 +12,22 @@ body {
 	background: #262324 url(images/templatemo_main_bg.jpg) top repeat-x;
 }
 
-a:link, a:visited { color: #b7bd19; text-decoration: none; font-weight: bold;} 
+a:link, a:visited { 
+   color: #5e0b8e; 
+   text-decoration: none; 
+   font-weight: bold;
+} 
 a:active, a:hover { color: #b7bd19; text-decoration: underline;}
 
 img {
 	padding: 0px;
 	margin: 0px;
 	margin-top: 130px;
+}
+
+.BtnPos{
+	margin-top: 200px;
+	margin-left:380px;
 }
 
 p {
@@ -156,6 +165,13 @@ h1 {
 	background: #b7bd19 url(images/templatemo_reg_bg.jpg) top left no-repeat;
 }
 
+#templatemo_register_succ {
+	clear: both;
+	width: 960px;
+	height: 300px;
+	background: #b7bd19 url(images/templatemo_reg_suc.jpg) top left no-repeat;
+}
+
 
 /* banner */
 #templatemo_banner {
@@ -264,9 +280,7 @@ h1 {
 	background: url(images/templatemo_services_icon.jpg) left bottom no-repeat;
 }
 
-/* end of left column */
 
-/* right column */
  #templatemo_content_right .right_column_section{ 
 	clear: both;
 	margin-bottom: 30px;
@@ -340,10 +354,7 @@ h1 {
 	margin-bottom: 5px;
 }
 
-/* end of right column */
-/* end of content */
 
-/* footer */
 #templatemo_footer {
 	clear: both;
 	color: #999;
@@ -357,4 +368,3 @@ h1 {
 	color: #fff;
 	font-weight: normal;
 }
-/* end of footer */

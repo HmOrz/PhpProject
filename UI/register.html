@@ -15,8 +15,7 @@
   <div id="templatemo_register">  	
   </div> <!-- end of banner -->
   
-  <form name="send" method="post" action="register.php"
-	  onSubmit="return Check()">
+  <form name="send" method="post" action="register.php" onSubmit="return Check()">
 	<table width="330" border="0" align="center" cellpadding="5">
     <tr>
 		<td width="40%" align="right">学号：</td>
@@ -45,8 +44,8 @@
     <tr>
 		<td align="right">性别：</td>
         <td>
-        <label><input type="radio" name="sex" checked="checked" value=""/>男</label>
-		<label><input type="radio" name="sex" value=""/>女</label>
+        <input type="radio" name="sex" id="sex1" checked="checked" value="男"/>男
+		<input type="radio" name="sex" id="sex2" value="女" />女
         <font color="#FF6699">*</font>
         </td>
 	</tr>
@@ -70,10 +69,11 @@
 	<tr>
 		<td align="right">政治面貌：</td>
         <td>
-        <select name="party">
+        <select class="BtnSty" name="party">
           <option value="群众" selected="selected">群众</option>
           <option value="共青团员">共青团员</option>
           <option value="中共党员">中共党员</option>
+		  <option value="其他党派">其他党派</option>
         </select>
         </td>
 	</tr>
@@ -86,8 +86,8 @@
 	<tr>
 		<td align="right">身份：</td>
         <td>
-        <label><input type="radio" name="iden" checked="checked" value=""/>学生</label>
-		<label><input type="radio" name="iden" value=""/>教师</label>
+        <input type="radio" name="iden" checked="checked" value=""/>学生
+		<label><input type="radio" name="iden" value=""/>教师
         <font color="#FF6699">*</font>
         </td>
 	</tr>
