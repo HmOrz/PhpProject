@@ -33,6 +33,8 @@
 			else
 			{
 				$errmsg = 0;
+				session_start();
+				unset($_SESSION['login']);
 			}
 			mysql_free_result($result);
 			mysql_close($db);
