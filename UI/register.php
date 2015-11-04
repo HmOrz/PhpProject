@@ -14,7 +14,7 @@
 	$iden = trim($_POST['iden']);
 	$phone = trim($_POST['phonenum']);
 	$address = $_POST['address'];
-	echo $sex;
+			
 	if (empty($no) || empty($born) || empty($password) || $cpassword != $password || empty($indate)
 		 || empty($indate) || empty($major) || empty($phone) || empty($address) || empty($name))
 	{
@@ -43,7 +43,10 @@
 		$result = mysql_query($sql);
 		if ($result && mysql_num_rows($result) > 0)
 		{
-			echo "<font color='red' size='5'>该学号已被注册！</font><br>\n";
+			$url="register_rep_fail.html";
+			echo "<script language='javascript' type='text/javascript'>";  
+			echo "window.location.href='$url'";  
+			echo "</script>";  
 		}
 		else
 		{
@@ -58,7 +61,13 @@
 				echo '数据记录插入失败！';
 				exit;
 			}
-			echo "<font color='red' size='5'>恭喜您注册成功！</font><br>\n";
+			else
+			{
+				$url="register_rep_succ.html";
+				echo "<script language='javascript' type='text/javascript'>";  
+				echo "window.location.href='$url'";  
+				echo "</script>";  
+			}
 		}
 		mysql_close($db);
 	}
