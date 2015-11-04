@@ -1,4 +1,5 @@
 <?
+    error_reporting(E_ALL & ~E_DEPRECATED);
 	require_once('function.php');
 	$username = trim($_POST['username']);
 	$password = $_POST['pwd'];
@@ -21,7 +22,6 @@
 		else
 		{
 			$sql = "SELECT * FROM `user` WHERE no = '$username' AND pwd = '$password'";
-			echo $sql;
 			$result = mysql_query($sql);
 			if($result && mysql_num_rows($result) > 0)
 			{
@@ -38,5 +38,18 @@
 			mysql_close($db);
 		}
 	}
-	echo "<font color='red' size='5'>”√ªß£∫".$username."".$errmsg."</font><br>\n";
+	if($errmsg == 1)
+	{
+		$url="login_rep_succ.html";
+		echo "<script language='javascript' type='text/javascript'>";  
+		echo "window.location.href='$url'";  
+		echo "</script>";  
+	}
+	else if($errmsg == 0)
+	{
+		$url="login_rep_fail.html";
+		echo "<script language='javascript' type='text/javascript'>";  
+		echo "window.location.href='$url'";  
+		echo "</script>";  
+	}
 ?>

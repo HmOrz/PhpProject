@@ -5,6 +5,14 @@
 <title>教务管理(课设)</title>
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 </head>
+<?
+	session_start();
+	if(empty($_SESSION['login']))
+	{
+		echo "您还没有登录，不能访问当前页面！";
+		exit;
+	}
+?>
 <body>
 <div id="templatemo_container">
   	<div id="templatemo_header">
