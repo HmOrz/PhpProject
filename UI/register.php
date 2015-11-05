@@ -1,5 +1,6 @@
-﻿<?
+﻿ <?
     error_reporting(E_ALL & ~E_DEPRECATED);
+	header("Content-type: text/html; charset=utf-8"); 
 	$no = trim($_POST['id']);
 	$password = $_POST['password'];
 	$cpassword = $_POST['cpassword'];
@@ -36,6 +37,11 @@
 		}
 		$db = mysql_connect('localhost','root');
 	    mysql_select_db("clprj");
+		//设置数据的字符集utf-8 
+		mysql_query("set names 'utf8' ");
+		mysql_query("set character_set_client=utf8");
+		mysql_query("set character_set_results=utf8");
+		
 		//$db = mysql_connect('localhost','root','198251') or die('Could not connect: '.mysql_error());
 		//mysql_select_db('register') or die('Could not select database');
 		$sql = "SELECT * FROM `user` WHERE `no` = '".$no."'";
@@ -53,7 +59,7 @@
 			$sql = "INSERT INTO `user` (no,name,pwd,sex,nation,born,indate,party,phone,major,adress,email) VALUES";
 			$sql .= "('$no', '$name', '$password', '$sex', '$nation', '$born', '$indate', '$party', '$phone', '$major', '$address', '$email')";
 			$result = mysql_query($sql);
-			echo $sql;
+			//echo $sql;
 			if(!$result)
 			{
 				mysql_free_result($result);
@@ -63,6 +69,7 @@
 			}
 			else
 			{
+				
 				$url="register_rep_succ.html";
 				echo "<script language='javascript' type='text/javascript'>";  
 				echo "window.location.href='$url'";  

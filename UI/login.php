@@ -1,5 +1,6 @@
-<?
+ï»¿<?
     error_reporting(E_ALL & ~E_DEPRECATED);
+	header("Content-type: text/html; charset=utf-8"); 
 	require_once('function.php');
 	$username = trim($_POST['username']);
 	$password = $_POST['pwd'];
@@ -8,12 +9,13 @@
 	{
 		if (empty($username))
 		{
-			$errmsg = 'Ñ§ºÅÊäÈë´íÎó£¡';
+			$errmsg = 'å­¦å·æˆ–å¯†ç é”™è¯¯ï¼';
 		}
 		if (empty($errmsg))
 		{
 			$db = mysql_connect('localhost','root','');
 			mysql_select_db('clprj');
+			mysql_query("set names utf8"); //**è®¾ç½®å­—ç¬¦é›†***
 		}
 		if(mysqli_connect_errno())
 		{

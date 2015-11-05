@@ -1,18 +1,27 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?
+    error_reporting(E_ALL & ~E_DEPRECATED);
+    @header('Content-type: text/html;charset=UTF-8');
 	$db = mysql_connect('localhost','root','');
 	mysql_select_db('clprj');
+	mysql_query("set names utf8"); //**设置字符集***
 	session_start();
 	if(empty($_SESSION['login']))
 	{
-		echo "您还没有登录，不能访问当前页面！";
+		$url="login.html";
+		echo "<script language='javascript' type='text/javascript'>";  
+		echo "window.location.href='$url'";  
+		echo "</script>";  
+		
 		exit;
 	}
 	$No = $_SESSION['user'];
 	$sql = "SELECT * FROM `user` WHERE no = '$No'";
 	$result = mysql_query($sql);
-	
+	$row = mysql_fetch_array($result);
+	/*
 	while($row=mysql_fetch_array($result)) //遍历SQL语句执行结果把值赋给数组
 	{
 		echo "<tr>";
@@ -22,10 +31,11 @@
 		echo "<td>$row[adress]</td>"; //显示地址
 		echo "</tr>";
 	}
+	*/
 	
 ?>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 <title>教务管理(课设)</title>
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -34,6 +44,12 @@
 <div id="templatemo_container">
   	<div id="templatemo_header">
     	<div id="site_title">
+		<tr>
+		   <td align = "center">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<? echo "$row[name]" ?></td>
+		   <BR>
+		   <td align = "center">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：<? echo "$row[no]" ?></td>
+		   <BR>
+		</TR>
     	</div>
     </div> <!-- end of header -->
     
@@ -51,7 +67,17 @@
     </div> <!-- end of menu -->
     
     <div id="templatemo_banner">
-    	
+    	<tr>
+		   <td align = "center">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<? echo "$row[name]" ?></td>
+		   <BR>
+		   <td align = "center">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：<? echo "$row[no]" ?></td>
+		   <BR>
+		   <td align = "center">专业班级：<? echo "$row[major]" ?></td>
+		   <BR>
+		   <td align = "center">入学时间：<? echo "$row[indate]" ?></td>
+		   <BR>
+		   <td align = "center">您的身份：<? echo "$row[iden]" ?></td>
+		</tr>
     </div> <!-- end of banner -->
     
  
