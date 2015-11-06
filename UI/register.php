@@ -1,6 +1,7 @@
 ﻿ <?
     error_reporting(E_ALL & ~E_DEPRECATED);
 	header("Content-type: text/html; charset=utf-8"); 
+	require_once('db_config.php');
 	$no = trim($_POST['id']);
 	$password = $_POST['password'];
 	$cpassword = $_POST['cpassword'];
@@ -35,8 +36,8 @@
 			echo 'Email格式不合法！';
 			exit;
 		}
-		$db = mysql_connect('localhost','root');
-	    mysql_select_db("clprj");
+		$db = mysql_connect($hostname,$username_db,$password_db);
+	    mysql_select_db($datebase_db);
 		//设置数据的字符集utf-8 
 		mysql_query("set names 'utf8' ");
 		mysql_query("set character_set_client=utf8");
@@ -56,8 +57,8 @@
 		}
 		else
 		{
-			$sql = "INSERT INTO `user` (no,name,pwd,sex,nation,born,indate,party,phone,major,adress,email) VALUES";
-			$sql .= "('$no', '$name', '$password', '$sex', '$nation', '$born', '$indate', '$party', '$phone', '$major', '$address', '$email')";
+			$sql = "INSERT INTO `user` (no,name,pwd,sex,nation,born,indate,party,phone,major,iden,adress,email) VALUES";
+			$sql .= "('$no', '$name', '$password', '$sex', '$nation', '$born', '$indate', '$party', '$phone', '$major', '$iden', '$address', '$email')";
 			$result = mysql_query($sql);
 			//echo $sql;
 			if(!$result)
@@ -69,7 +70,6 @@
 			}
 			else
 			{
-				
 				$url="register_rep_succ.html";
 				echo "<script language='javascript' type='text/javascript'>";  
 				echo "window.location.href='$url'";  

@@ -11,6 +11,7 @@ create table `user`
     `party` varchar(5) not null comment '政党',
     `phone` varchar(15) not null comment '电话号码',
     `major` varchar(10) not null comment '专业',
+    `iden` varchar(10) not null comment '身份',
     `adress` varchar(25) not null comment '地址',
     `email` varchar(20) comment '邮箱',
    primary key (`id`)

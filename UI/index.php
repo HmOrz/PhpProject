@@ -3,9 +3,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?
     error_reporting(E_ALL & ~E_DEPRECATED);
-    @header('Content-type: text/html;charset=UTF-8');
-	$db = mysql_connect('localhost','root','');
-	mysql_select_db('clprj');
+    header('Content-type: text/html;charset=UTF-8');
+	require_once('db_config.php');
+	$db = mysql_connect($hostname_db,$username_db,$password_db);
+	mysql_select_db($datebase_db);
 	mysql_query("set names utf8"); //**设置字符集***
 	session_start();
 	if(empty($_SESSION['login']))
