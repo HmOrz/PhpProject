@@ -45,41 +45,46 @@
 <div id="templatemo_container">
   	<div id="templatemo_header">
     	<div id="site_title">
-		<tr>
-		   <td align = "center">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<? echo "$row[name]" ?></td>
-		   <BR>
-		   <td align = "center">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：<? echo "$row[no]" ?></td>
-		   <BR>
-		</TR>
     	</div>
     </div> <!-- end of header -->
     
     <div id="templatemo_menu">
     	<span></span>
         <ul>
-            <li class="current"><a href="index.html">
+            <li class="current"><a href="index.php">
             <b>首 页</b></a></li>
-            <li><a href="msg_page.html"><b>学籍管理</b></a></li>
+            <li><a href="info_page.html"><b>学籍管理</b></a></li>
             <li><a href="test_page.html"><b>考务安排</b></a></li>
             <li><a href="score_page.html"><b>成绩管理</b></a></li>
-            <li><a href="notice_page.html"><b>实时通知</b></a></li>
+            <li><a href="news_page.php"><b>实时通知</b></a></li>
         </ul>
 
     </div> <!-- end of menu -->
     
-    <div id="templatemo_banner">
-    	<tr>
-		   <td align = "center">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<? echo "$row[name]" ?></td>
-		   <BR>
-		   <td align = "center">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：<? echo "$row[no]" ?></td>
-		   <BR>
-		   <td align = "center">专业班级：<? echo "$row[major]" ?></td>
-		   <BR>
-		   <td align = "center">入学时间：<? echo "$row[indate]" ?></td>
-		   <BR>
-		   <td align = "center">您的身份：<? echo "$row[iden]" ?></td>
+    <div id="templatemo_banner"> 
+      <table width="49%" height="73%" border="0">
+        <tr>
+		  <td align = "right">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
+          <td align = "left"><? echo "$row[name]" ?></td>
 		</tr>
-    </div> <!-- end of banner -->
+        <tr>
+		  <td align = "right">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：</td>
+          <td align= "left"><? echo "$row[no]" ?></td>
+        </tr>
+        <tr>
+		  <td align = "right">专业班级：</td>
+          <td align= "left"><? echo "$row[major]" ?></td>
+		</tr>
+        <tr>
+		  <td align = "right">入学时间：</td>
+          <td align= "left"><? echo "$row[indate]" ?></td>
+        </tr>
+        <tr>
+		  <td align = "right">您的身份：</td>
+          <td align= "left"><? echo "$row[iden]" ?></td>
+		</tr>
+      </table>
+  </div> <!-- end of banner -->
     
  
     

@@ -13,7 +13,7 @@
 	$indate = trim($_POST['in_date']);
 	$party = trim($_POST['party']);
 	$major = trim($_POST['major']);
-	$iden = trim($_POST['iden']);
+	$iden = $_POST['iden'];
 	$phone = trim($_POST['phonenum']);
 	$address = $_POST['address'];
 			
@@ -36,7 +36,7 @@
 			echo 'Email格式不合法！';
 			exit;
 		}
-		$db = mysql_connect($hostname,$username_db,$password_db);
+		$db = mysql_connect($hostname_db,$username_db,$password_db);
 	    mysql_select_db($datebase_db);
 		//设置数据的字符集utf-8 
 		mysql_query("set names 'utf8' ");
@@ -59,8 +59,8 @@
 		{
 			$sql = "INSERT INTO `user` (no,name,pwd,sex,nation,born,indate,party,phone,major,iden,adress,email) VALUES";
 			$sql .= "('$no', '$name', '$password', '$sex', '$nation', '$born', '$indate', '$party', '$phone', '$major', '$iden', '$address', '$email')";
+			echo $sql;
 			$result = mysql_query($sql);
-			//echo $sql;
 			if(!$result)
 			{
 				mysql_free_result($result);
@@ -70,10 +70,12 @@
 			}
 			else
 			{
+				
 				$url="register_rep_succ.html";
 				echo "<script language='javascript' type='text/javascript'>";  
 				echo "window.location.href='$url'";  
 				echo "</script>";  
+				
 			}
 		}
 		mysql_close($db);

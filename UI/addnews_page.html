@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>教务管理(课设)</title>
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="templatemo_container">
+  	<div id="templatemo_header">
+    	<div id="site_title">
+    	</div>
+    </div> <!-- end of header -->
+    
+    <div id="templatemo_menu">
+    	<span></span>
+        <ul>
+            <li><a href="index.php"><b>首 页</b></a></li>
+            <li><a href="info_page.html"><b>学籍管理</b></a></li>
+            <li><a href="test_page.html"><b>考务安排</b></a></li>
+            <li><a href="score_page.html"><b>成绩管理</b></a></li>
+            <li class="current"><a href="news_page.html"><b>实时通知</b></a></li>
+        </ul>
+
+    </div> <!-- end of menu -->
+    
+    <div id="templatemo_base">
+      <table width="100%" border="0" align="center" style="font-size:25px; color:#C36">
+      <tr>
+        <td align="center" valign="bottom"><strong>消息发布</strong></td>
+      </tr>
+      </table>
+    	
+    </div> <!-- end of banner -->
+    <form name="AddNews" method="post" action="addnews.php" onSubmit="return Check();">
+    <table width="960px" border="0" align="center">
+    <td height="169" colspan="6" align="center"><table width="960px" height="100%" border="0">
+        <tr>
+          <td align="center" valign="top"><table width="88%" height="100%" border="0">
+           <tr>
+             <td height="89" align="right">
+             <table width="100%" border="0">
+               <tr>
+                 <td height="19" align="right">新闻标题：<br /></td>
+                 <td align="left">
+                 	<label><input name="newsTitle" type="text" id="newsTitle" /></label>
+                 </td>
+               </tr>
+               <tr>
+               <td width="12%" align="right">通知类型：</td>
+               <td width="13%" align="left"><label>
+                 <select name="newsType" id="newsType">
+                   <option value="校内通知">校内通知</option>
+                   <option value="班内通知">班内通知</option>
+                 </select>
+               </label></td>
+               </tr>
+               <tr>
+                 <td width="12%" align="right">消息内容：</td>
+                 <td height="8" colspan="5" align="left">
+                 <label>
+                   <textarea name="newsContent" cols="30" rows="6" id="newsContent"></textarea>
+                 </label></td>
+               </tr>
+               <tr>
+                 <td height="60" colspan="3" align="center">
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="submit" class="BtnSty" value="发布">
+                 &nbsp;&nbsp;
+                 <input type="reset" class="BtnSty" value="重置">
+                 &nbsp;&nbsp;
+                 <a href="news_page.php"><input type="button" class="BtnSty" name="back" value="返回"></a>
+                 </td>
+		  	   </tr>
+           </table>
+    <div id="templatemo_footer">
+        此网页仅用于课程设计！ | Designed by <strong>Hm Team</strong>
+    </div> <!-- end of footer -->
+</div><!-- end of container -->
+</body>
+</html>

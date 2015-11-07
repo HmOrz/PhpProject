@@ -6,8 +6,6 @@
 	$username = trim($_POST['username']);
 	$password = $_POST['pwd'];
 	$errmsg = 0;
-	echo $hostname_db;
-	echo $username_db;
 	if (!empty($username))
 	{
 		if (empty($username))
@@ -28,12 +26,14 @@
 		{
 			$sql = "SELECT * FROM `user` WHERE no = '$username' AND pwd = '$password'";
 			$result = mysql_query($sql);
+			$row = mysql_fetch_array($result);
 			if($result && mysql_num_rows($result) > 0)
 			{
 				$errmsg = 1;
 				session_start();
-				$_SESSION['login'] = 'true';
+				$_SESSION['login'] = "$row[iden]";
 				$_SESSION['user'] = $username;
+				$_SESSION['name'] = "$row[name]";
 			}
 			else
 			{
