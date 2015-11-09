@@ -37,7 +37,7 @@
     
     <div id="templatemo_base">
     </div> <!-- end of banner -->
-    <form name="info_page_alter" method="post" action="info_alter.php">
+    <form name="info_page_alter" method="post" action="infoalter.php">
     <table width="100%" cellpadding="6" style="font-size:18px;">
         <tr>
           <td width="50%" align = "right">照&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;片：</td>
@@ -53,7 +53,7 @@
         </tr>
         <tr>
 		  <td align = "right">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</td>
-          <td align= "left"><input name="sex" type="text" style="font-size:15px" id="sex" value="<? echo "$row[sex]" ?>" ></td>
+          <td align= "left"><? echo "$row[sex]" ?></td>
           <td rowspan="4"></td>
         </tr>
         <tr>

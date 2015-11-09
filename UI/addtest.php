@@ -12,27 +12,31 @@
 	session_start();
 	if($_SESSION['login'] == "学生")
 	{
-		$url="news_page.php";
+		$url="test_page.php";
 		echo "<script language='javascript' type='text/javascript'>";  
 		echo "window.location.href='$url'";  
 		echo "</script>"; 
 		exit;
 	}
-	$title = $_POST['newsTitle'];
-	$type = $_POST['newsType'];
-	$content = $_POST['newsContent'];
-	$author = $_SESSION['name'];
-	if (empty($title) || empty($content))
+	$clname = trim($_POST['clname']);
+	$clyear = trim($_POST['clyear']);
+	$cltime = trim($_POST['cltime']);
+	$clplace = trim($_POST['clplace']);
+			
+	if (empty($clname) ||empty($clyear)|| empty($cltime) || empty($clplace))
 	{
-		echo '请检查输入是否完整';
+		echo '数据输入不完整';
 		exit;
 	}
-	$sql = "INSERT INTO `news` (title,type,author,content,time) VALUES";
-	$sql .= "('$title', '$type', '$author', '$content', NOW());";
-	//echo $sql;
+	else
+	{
+		$sql = "INSERT INTO `course` (name,test_time,year,place) VALUES";
+		$sql .= "('$clname', '$cltime', '$clyear', '$clplace');";
+		echo $sql;
 		
-    $result = mysql_query($sql);
-	$mark  = mysql_affected_rows();
+		$result = mysql_query($sql);
+		$mark  = mysql_affected_rows();
+	}
 ?>
 
   <div id="templatemo_container">
@@ -48,12 +52,12 @@
 	  ?>
 	  <table height="200px" width="100%" align="center">
 	    <tr>
-	      <td align="center" style="color:#900; font-size:28px"><strong>发布新通知成功！</strong></td>
+	      <td align="center" style="color:#900; font-size:28px"><strong>发布考试信息成功！</strong></td>
 	    </tr>
 	  </table>
       <table width="100%" align="center">
         <tr>
-          <td align="center"><a href="news_page.php" style="color:#5e0b8e; font-size:20px;">返回通知页</a></td>
+          <td align="center"><a href="test_page_admin.php" style="color:#5e0b8e; font-size:20px;">返回上一页</a></td>
         </tr>
       </table>
       <?
@@ -62,12 +66,12 @@
 	  ?>
       <table height="200px" width="100%" align="center">
 	    <tr>
-	      <td align="center" style="color:#900; font-size:28px"><strong>发布通知失败，请检查输入！</strong></td>
+	      <td align="center" style="color:#900; font-size:28px"><strong>发布失败，请检查输入！</strong></td>
 	    </tr>
 	  </table>
       <table width="100%" align="center">
         <tr>
-          <td align="center"><a href="news_page.php" style="color:#5e0b8e; font-size:20px;">返回通知页</a></td>
+          <td align="center"><a href="test_page_admin.php" style="color:#5e0b8e; font-size:20px;">返回上一页</a></td>
         </tr>
       </table>
       <?

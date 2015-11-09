@@ -6,33 +6,11 @@
 <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 </head>
 <?
+  error_reporting(E_ALL & ~E_DEPRECATED);
+  require ('db_config.php'); 
   session_start();
-  $iden = $_SESSION['login'];
-  if($iden == "管理员")
-  {
-      $url="newspage_admin.php";
-	  echo "<script language='javascript' type='text/javascript'>";  
-	  echo "window.location.href='$url'";  
-	  echo "</script>";  
-	  exit;
-  }
-  else if ($iden == "教师")
-  {
-	  $url="newspage_tea.php";
-	  echo "<script language='javascript' type='text/javascript'>";  
-	  echo "window.location.href='$url'";  
-	  echo "</script>";  
-	  exit;
-  }
-  else
-  {
-	  $url="newspage_stu.php";
-	  echo "<script language='javascript' type='text/javascript'>";  
-	  echo "window.location.href='$url'";  
-	  echo "</script>";  
-	  exit;
-  }
 ?>
+
 <body>
 <div id="templatemo_container">
   	<div id="templatemo_header">
@@ -44,19 +22,23 @@
     	<span></span>
         <ul>
             <li><a href="index.php"><b>首 页</b></a></li>
-            <li><a href="info_page.html"><b>学籍管理</b></a></li>
-            <li><a href="test_page.html"><b>考务安排</b></a></li>
-            <li><a href="score_page.html"><b>成绩管理</b></a></li>
-            <li class="current"><a href="news_page.html"><b>实时通知</b></a></li>
+            <li><a href="info_page.php"><b>学籍管理</b></a></li>
+            <li><a href="test_page.php"><b>考务安排</b></a></li>
+            <li class="current"><a href="score_page.php"><b>成绩管理</b></a></li>
+            <li><a href="news_page.php"><b>实时通知</b></a></li>
         </ul>
 
     </div> <!-- end of menu -->
     
     <div id="templatemo_base">
-
+      <table width="20%" border="0" height="40px" align="center" style="margin-left:50px">
+	    <tr>
+		  <td align="left"><a href="score_page_research.php">查询成绩</a></td>
+          <td align="left"><a href="score_page_add.php">发布成绩</a></td>
+        </tr>
+      </table>
     </div> <!-- end of banner -->
     
- 
     
     <div id="templatemo_footer">此网页仅用于课程设计！ | Designed by <strong>Hm Team</strong></div> <!-- end of footer -->
 </div><!-- end of container -->

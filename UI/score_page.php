@@ -11,10 +11,11 @@
   session_start();
   if($_SESSION['login'] != '学生')
   {
-	  /*$url="login_rep_fail.html";
+	  $url="score_page_admin.php";
 	  echo "<script language='javascript' type='text/javascript'>";  
 	  echo "window.location.href='$url'";  
-	  echo "</script>";*/
+	  echo "</script>";
+	  exit;
   }
   $name = $_SESSION['name'];
   $y = $_SESSION['year'];

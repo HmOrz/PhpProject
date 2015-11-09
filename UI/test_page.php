@@ -9,6 +9,14 @@
   error_reporting(E_ALL & ~E_DEPRECATED);
   require ('db_config.php'); 
   session_start();
+  if($_SESSION['login'] != '学生')
+  {
+	  $url="test_page_admin.php";
+	  echo "<script language='javascript' type='text/javascript'>";  
+	  echo "window.location.href='$url'";  
+	  echo "</script>";
+	  exit;
+  }
   $name = $_SESSION['name'];
   $y = $_SESSION['year'];
   $yy = intval($y);

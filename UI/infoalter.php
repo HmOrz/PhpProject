@@ -10,29 +10,37 @@
 	header("Content-type: text/html; charset=utf-8"); 
 	require_once('db_config.php');
 	session_start();
-	if($_SESSION['login'] == "学生")
+	$id = $_SESSION['user'];
+	$nation = trim($_POST['nation']);
+	$born = trim($_POST['born']);
+	$indate = trim($_POST['indate']);
+	$party = trim($_POST['party']);
+	$major = trim($_POST['major']);
+	$phone = trim($_POST['phone']);
+	$address = $_POST['address'];
+	$email = $_POST['email'];
+			
+	if (empty($born) ||empty($indate)|| empty($party) || empty($major) || empty($phone))
 	{
-		$url="news_page.php";
-		echo "<script language='javascript' type='text/javascript'>";  
-		echo "window.location.href='$url'";  
-		echo "</script>"; 
+		echo '数据输入不完整';
 		exit;
 	}
-	$title = $_POST['newsTitle'];
-	$type = $_POST['newsType'];
-	$content = $_POST['newsContent'];
-	$author = $_SESSION['name'];
-	if (empty($title) || empty($content))
+	else
 	{
-		echo '请检查输入是否完整';
-		exit;
-	}
-	$sql = "INSERT INTO `news` (title,type,author,content,time) VALUES";
-	$sql .= "('$title', '$type', '$author', '$content', NOW());";
-	//echo $sql;
+		$pattern = "/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/";
+		if(!preg_match($pattern, $email))
+		{
+			echo 'Email格式不合法！';
+			exit;
+		}
+		$sql = "UPDATE `user` SET nation='".$nation."', born='".$born."', indate='".$indate."', party='".$party."', 
+		       major='".$major."',phone='".$phone."', adress='".$address."', email='".$email."' WHERE no='".$id."'";
+		//echo $sql;
 		
-    $result = mysql_query($sql);
-	$mark  = mysql_affected_rows();
+		$result = mysql_query($sql);
+		$mark  = mysql_affected_rows();
+		
+	}
 ?>
 
   <div id="templatemo_container">
@@ -48,12 +56,12 @@
 	  ?>
 	  <table height="200px" width="100%" align="center">
 	    <tr>
-	      <td align="center" style="color:#900; font-size:28px"><strong>发布新通知成功！</strong></td>
+	      <td align="center" style="color:#900; font-size:28px"><strong>更新个人信息资料成功！</strong></td>
 	    </tr>
 	  </table>
       <table width="100%" align="center">
         <tr>
-          <td align="center"><a href="news_page.php" style="color:#5e0b8e; font-size:20px;">返回通知页</a></td>
+          <td align="center"><a href="info_page.php" style="color:#5e0b8e; font-size:20px;">返回资料页</a></td>
         </tr>
       </table>
       <?
@@ -62,12 +70,12 @@
 	  ?>
       <table height="200px" width="100%" align="center">
 	    <tr>
-	      <td align="center" style="color:#900; font-size:28px"><strong>发布通知失败，请检查输入！</strong></td>
+	      <td align="center" style="color:#900; font-size:28px"><strong>更新资料失败，请检查输入！</strong></td>
 	    </tr>
 	  </table>
       <table width="100%" align="center">
         <tr>
-          <td align="center"><a href="news_page.php" style="color:#5e0b8e; font-size:20px;">返回通知页</a></td>
+          <td align="center"><a href="info_page.php" style="color:#5e0b8e; font-size:20px;">返回资料页</a></td>
         </tr>
       </table>
       <?
