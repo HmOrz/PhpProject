@@ -6,6 +6,7 @@
     header('Content-type: text/html;charset=UTF-8');
 	require_once('db_config.php');
 	session_start();
+	$No = $_SESSION['user'];
 	if(empty($_SESSION['login']))
 	{
 		$url="login.html";
@@ -68,7 +69,7 @@
         <tr>
 		  <td align = "right"><b>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：</b></td>
           <td align= "left"><b><? echo "$row[no]" ?></b></td>
-          <td rowspan="4" align="left"><img border="2" width="120px" height="160px" style="margin-top:0; border:double" src="images/UserImg/Jay.jpg"</td></td>
+          <td rowspan="4" align="left"><img border="2" width="120px" height="160px" style="margin-top:0; border:double" src="UserImg/<? echo $No;?>.jpg"></td></td>
         </tr>
         <tr>
 		  <td align = "right"><b>专业班级：</b></td>

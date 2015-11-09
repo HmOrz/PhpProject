@@ -46,7 +46,7 @@
     <table width="100%" cellpadding="6" style="font-size:18px;">
         <tr>
           <td width="50%" align = "right">照&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;片：</td>
-          <td width="50%" align="left"><img width="90px" height="120px" style="margin-top:0; border:double" src="images/UserImg/Jay.jpg"</td></td>
+          <td width="50%" align="left"><img width="90px" height="120px" style="margin-top:0; border:double" src="UserImg/<? echo $No; ?>.jpg"</td></td>
         </tr>
         <tr>
 		  <td width="50%" align = "right">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</td>

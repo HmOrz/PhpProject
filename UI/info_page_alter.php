@@ -36,12 +36,19 @@
     </div> <!-- end of menu -->
     
     <div id="templatemo_base">
+      <table width="100%" border="0" height="40px" align="center">
+        <tr>
+          <td align="center" style="color:#006; font-size:20px"><strong>个人信息修改</strong></td>
+        </tr>
+      </table>
     </div> <!-- end of banner -->
     <form name="info_page_alter" method="post" action="infoalter.php">
     <table width="100%" cellpadding="6" style="font-size:18px;">
         <tr>
           <td width="50%" align = "right">照&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;片：</td>
-          <td width="50%" align="left"><img width="90px" height="120px" style="margin-top:0; border:double" src="images/UserImg/Jay.jpg"</td></td>
+          <td width="50%" align="left"><img width="90px" height="120px" style="margin-top:0; border:double" src="UserImg/<? echo $No; ?>.jpg"/><a href="imgupload.php">
+            <input style="margin-top:102px" type="button" class="BtnSty" name="back2" value="更改图片" />
+          </a></td>
         </tr>
         <tr>
 		  <td width="50%" align = "right">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
