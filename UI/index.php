@@ -51,8 +51,8 @@
             <li class="current"><a href="index.php">
             <b>首 页</b></a></li>
             <li><a href="info_page.php"><b>学籍管理</b></a></li>
-            <li><a href="test_page.html"><b>考务安排</b></a></li>
-            <li><a href="score_page.html"><b>成绩管理</b></a></li>
+            <li><a href="test_page.php"><b>考务安排</b></a></li>
+            <li><a href="score_page.php"><b>成绩管理</b></a></li>
             <li><a href="news_page.php"><b>实时通知</b></a></li>
         </ul>
 

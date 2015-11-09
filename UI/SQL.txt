@@ -29,3 +29,14 @@ CREATE TABLE `news`
     `time` datetime NOT NULL default '0000-00-00 00:00:00',
     PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=9;
+
+
+CREATE TABLE `score` 
+(
+    `id` int(20) unsigned NOT NULL auto_increment,
+    `classname` varchar(50) NOT NULL,FOREIGN KEY (classname) REFERENCES course(name) ON DELETE CASCADE,
+    `stu_id` varchar(11) NOT NULL,FOREIGN KEY (stu_id) REFERENCES user(no) ON DELETE CASCADE,
+    `year` varchar(40) NOT NULL,
+    `score` int(10) unsigned NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

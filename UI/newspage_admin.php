@@ -47,7 +47,7 @@
     </div> <!-- end of menu -->
     
     <div id="templatemo_base">
-	  <form name="News_admin" method="post" action="newspage_admin.php" onSubmit="return Check();">
+	  <form name="News_admin" method="post" action="newspage_admin.php">
 	  <table width="100%" border="0" height="40px" align="center">
 	    <tr>
 		  <td width="10%" align="right"><a href="addnews_page.html">发布通知</a></td>

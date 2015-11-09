@@ -36,13 +36,8 @@
     </div> <!-- end of menu -->
     
     <div id="templatemo_base">
-      <table width="100%" border="0" height="40px" align="center" style="margin-left:50px">
-	    <tr>
-		  <td width="10%" align="left"><a href="info_page_alter.php">修改资料</a></td>
-        </tr>
-      </table>
     </div> <!-- end of banner -->
-    
+    <form name="info_page_alter" method="post" action="info_alter.php">
     <table width="100%" cellpadding="6" style="font-size:18px;">
         <tr>
           <td width="50%" align = "right">照&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;片：</td>
@@ -58,43 +53,49 @@
         </tr>
         <tr>
 		  <td align = "right">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</td>
-          <td align= "left"><? echo "$row[sex]" ?></td>
+          <td align= "left"><input name="sex" type="text" style="font-size:15px" id="sex" value="<? echo "$row[sex]" ?>" ></td>
           <td rowspan="4"></td>
         </tr>
         <tr>
 		  <td align = "right">民&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;族：</td>
-          <td align= "left"><? echo "$row[nation]" ?></td>
+          <td align= "left"><input name="nation" type="text" style="font-size:15px" id="nation" value="<? echo "$row[nation]" ?>" ></td>
           <td rowspan="4"></td>
         </tr>
         <tr>
 		  <td align = "right">出生日期：</td>
-          <td align= "left"><? echo "$row[born]" ?></td>
+          <td align= "left"><input name="born" type="text" style="font-size:15px" id="born" value="<? echo "$row[born]" ?>" ></td>
           <td rowspan="4"></td>
         </tr>
         <tr>
 		  <td align = "right">专业班级：</b></td>
-          <td align= "left"><? echo "$row[major]" ?></td>
+          <td align= "left"><input name="major" type="text" style="font-size:15px" id="major" value="<? echo "$row[major]" ?>" ></td>
 		</tr>
         <tr>
 		  <td align = "right">入学时间：</b></td>
-          <td align= "left"><? echo "$row[indate]" ?></td>
+          <td align= "left"><input name="indate" type="text" style="font-size:15px" id="indate" value="<? echo "$row[indate]" ?>" ></td>
         </tr>
         <tr>
 		  <td align = "right">政治面貌：</b></td>
-          <td align= "left"><? echo "$row[party]" ?></td>
+          <td align= "left"><input name="party" type="text" style="font-size:15px" id="party" value="<? echo "$row[party]" ?>" ></td>
         </tr>
         <tr>
 		  <td align = "right">联系号码：</td>
-          <td align= "left"><? echo "$row[phone]" ?></td>
+          <td align= "left"><input name="phone" type="text" style="font-size:15px" id="phone" value="<? echo "$row[phone]" ?>" ></td>
         </tr>
         <tr>
 		  <td align = "right"> Email：</td>
-          <td align= "left"><? echo "$row[email]" ?></td>
+          <td align= "left"><input name="email" type="text" style="font-size:15px" id="email" value="<? echo "$row[email]" ?>" ></td>
         </tr>
         <tr>
 		  <td align = "right">联系地址：</b></td>
-          <td align= "left"><? echo "$row[adress]" ?></td>
+          <td align= "left"><input name="address" type="text" style="font-size:15px; width:260px" id="address" value="<? echo "$row[adress]" ?>" ></td>
         </tr>
+        <tr>
+		<td colspan="2" align="center"> 
+            &nbsp;&nbsp;&nbsp;
+			<input type="submit" class="BtnSty" name="Submit" value="提  交">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="info_page.php"><input type="button" class="BtnSty" name="back" value="返  回"></a>
       </table>
     
  
