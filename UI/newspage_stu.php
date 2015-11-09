@@ -50,7 +50,6 @@
 	  <form name="News_admin" method="post" action="newspage_admin.php" onSubmit="return Check();">
 	  <table width="100%" border="0" height="40px" align="center">
 	    <tr>
-		  <td width="10%" align="right"><a href="addnews_page.html">发布通知</a></td>
 		  <td width="60%" align="right"><label><input name="search" type="text" id="search"/></label>
 		  <td width="5%" align="left"><button type="submit" name="BtnSearch" style="width:20px; height:20px; border:none; background-image:url('images/search.jpg')"></td>
 		</tr>
@@ -68,7 +67,6 @@
 		    <td width="30%" align="left"><a href="news_show.php?id=<? echo $rs->id ?>"><? echo $rs->title ?></a></td>
 		  	<td width="20%" align="right">[<? echo $rs->author?>&nbsp;&nbsp;&nbsp;</td>
 			<td width="20%" align="left"><? echo $rs->time ?>]</td>
-			<td width="10%" align="left"><a href="news_delete.php?id=<? echo $rs->id ?>">删除通知</a></td>
 		  </tr>
 	    </table>
 		<hr width="95%" size=1px>

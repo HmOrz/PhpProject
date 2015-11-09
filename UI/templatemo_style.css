@@ -18,7 +18,8 @@ a:active, a:hover { color: #b7bd19; text-decoration: underline;}
 img {
 	padding: 0px;
 	margin: 0px;
-	margin-top: 130px;
+	margin-top: 0px;
+	vertical-align: top;
 }
 
 p {
@@ -298,7 +299,6 @@ h1 {
 	height: 245px;
 	background: #b7bd19 url(images/templatemo_base_bg.jpg) top left no-repeat;
 }
-
 #templatemo_banner p{
 	color: #333;
 	font-size: 13px;

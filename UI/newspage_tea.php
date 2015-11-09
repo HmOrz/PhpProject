@@ -68,7 +68,6 @@
 		    <td width="30%" align="left"><a href="news_show.php?id=<? echo $rs->id ?>"><? echo $rs->title ?></a></td>
 		  	<td width="20%" align="right">[<? echo $rs->author?>&nbsp;&nbsp;&nbsp;</td>
 			<td width="20%" align="left"><? echo $rs->time ?>]</td>
-			<td width="10%" align="left"><a href="news_delete.php?id=<? echo $rs->id ?>">删除通知</a></td>
 		  </tr>
 	    </table>
 		<hr width="95%" size=1px>
